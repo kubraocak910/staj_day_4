@@ -1,0 +1,101 @@
+// TCL il ilgili  uygulama deneyimleri 
+// hesap makinesi 
+//2048 
+//hava durumu 
+//çalışan bilgilerine erişim
+
+// CatAi
+
+var 
+MyForm : TClForm ;
+CatAi : TClOpenAIEngne;
+selam: TClProLabel;
+chatbox, answerbox : TclProEdit;
+sendbutton: TClProButton;
+
+{
+
+  myform=TClForm.Create(self);
+  myform.SetFormColor('#feeced','',clGNone);
+  
+  //SELAM VERME
+    selam = MyForm.AddNewProLabel(MyForm, 'selam', 'Merhaba , Hoşgeldin  Bugün ne üzerine çalışıyorsun ?  :) ');
+    selam.align=alMosttop;
+    selam.margins.top = 20;
+    selam.margins.right = 60;
+    selam.margins.left = 60;
+    selam.margins.bottom = 20;
+    selam.clProSettings.IsRound = True; 
+    selam.clProSettings.FontColor=clAlphaColor.clHexToColor('#ff576a');
+    selam.clProSettings.TextSettings.Font.Style=[fsBold];
+    selam.clProSettings.AutoSize =True;
+    selam.clProSettings.WordWrap=True;
+    selam.clProSettings.FontHorzAlign =palCenter;
+    selam.clProSettings.FontVertAlign =palCenter;
+    selam.clProSettings.FontSize= 20;
+    selam.SetclProSettings(selam.clProSettings);
+
+  //CHATBOX
+    chatbox=MyForm.AddNewProEdit(MyForm, 'chatbox', 'nasıl yardımcı olabilirim ?');
+    chatbox.align = alMosttop;
+    chatbox.margins.top = 20;
+    chatbox.margins.right = 60;
+    chatbox.margins.left = 60;
+    chatbox.margins.bottom = 20;
+    chatbox.Height = 50;
+    chatbox.clProSettings.BorderWidth = 1;
+    chatbox.clProSettings.BorderColor = clAlphaColor.clHexToColor('#ff576a');
+    chatbox.clProSettings.IsFill = False;
+    chatbox.clProSettings.FontColor=clAlphaColor.clHexToColor('#ff576a');
+    chatbox.clProSettings.BackgroundColor = clAlphaColor.clHexToColor('#feeced');
+    chatbox.SetclProSettings(chatbox.clProSettings);
+    // ?? metin çok olduğu zaman alt satıra nasıl geçecek ??
+    
+  //SENDBUTTON 
+    sendbutton= MyForm.AddNewProButton(MyForm, 'sendbutton', 'Gönder');
+    sendbutton.align = alMosttop;
+    sendbutton.margins.top = 20;
+    sendbutton.margins.right = 60;
+    sendbutton.margins.left = 60;
+    sendbutton.margins.bottom = 20;
+    sendbutton.clProSettings.FontColor=clAlphaColor.clHexToColor('#feeced');
+    sendbutton.clProSettings.BackgroundColor = clAlphaColor.clHexToColor('#ff576a');
+    sendbutton.SetclProSettings(sendbutton.clProSettings);
+    
+  //ANSWERBOX
+    answerbox=MyForm.AddNewProEdit(MyForm, 'answerbox', '');
+    answerbox.align = alMosttop;
+    answerbox.margins.top = 20;
+    answerbox.margins.right = 60;
+    answerbox.margins.left = 60;
+    answerbox.margins.bottom = 20;
+    answerbox.Height = 200;
+    answerbox.clProSettings.BorderWidth = 1;
+    answerbox.clProSettings.BorderColor = clAlphaColor.clHexToColor('#ff576a');
+    answerbox.clProSettings.IsFill = False;
+    answerbox.clProSettings.FontColor=clAlphaColor.clHexToColor('#ff576a');
+    answerbox.clProSettings.BackgroundColor = clAlphaColor.clHexToColor('#feeced');
+    answerbox.SetclProSettings(answerbox.clProSettings);
+    
+  //animasyon eklecek yazı yazma başlasığında üstünden kedi çıkacak 
+  //cevap butona bazıldığında kedi sesi gelecek 
+  
+  
+  
+  MyForm.run;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
